@@ -11,7 +11,7 @@ export default {
   children: [
     {
       path: "/chatai/index",
-      name: "ChatAi",
+      name: "AI 问答",
       component: () => import("@/views/chatai/index.vue"),
       meta: {
         title: "chat-ai",

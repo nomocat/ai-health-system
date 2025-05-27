@@ -16,15 +16,7 @@ const systemManagementRouter = {
     rank: system
   },
   children: [
-    {
-      path: "/system/user/index",
-      name: "SystemUser",
-      meta: {
-        icon: "ri:admin-line",
-        title: "menus.pureUser",
-        roles: ["admin"]
-      }
-    },
+
     {
       path: "/system/role/index",
       name: "SystemRole",
@@ -40,15 +32,6 @@ const systemManagementRouter = {
       meta: {
         icon: "ep:menu",
         title: "menus.pureSystemMenu",
-        roles: ["admin"]
-      }
-    },
-    {
-      path: "/system/dept/index",
-      name: "SystemDept",
-      meta: {
-        icon: "ri:git-branch-line",
-        title: "menus.pureDept",
         roles: ["admin"]
       }
     }
