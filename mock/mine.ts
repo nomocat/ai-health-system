@@ -12,10 +12,10 @@ export default defineFakeRoute([
         data: {
           avatar: "https://avatars.githubusercontent.com/u/44761321",
           username: "admin",
-          nickname: "小铭",
-          email: "pureadmin@163.com",
-          phone: "15888886789",
-          description: "一个热爱开源的前端工程师"
+          nickname: "nomocat",
+          email: "nomocat@163.com",
+          phone: "15071680464",
+          description: ""
         }
       };
     }
@@ -29,7 +29,7 @@ export default defineFakeRoute([
         {
           id: 1,
           ip: faker.internet.ipv4(),
-          address: "中国河南省信阳市",
+          address: "中国安徽合肥市",
           system: "macOS",
           browser: "Chrome",
           summary: "账户登录", // 详情
@@ -38,7 +38,7 @@ export default defineFakeRoute([
         {
           id: 2,
           ip: faker.internet.ipv4(),
-          address: "中国广东省深圳市",
+          address: "中国安徽合肥市",
           system: "Windows",
           browser: "Firefox",
           summary: "绑定了手机号码",

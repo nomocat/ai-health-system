@@ -17,10 +17,16 @@ import {
   Speech,
   IntroPanel
 } from "./components";
+import IMessage from "./components/iMessage.vue";
 
 defineOptions({
   name: "ChatAi"
 });
+
+const swiper = [
+  { id: 0, label: "AI 健康问答 讯飞星火", component: IMessage }
+  // { id: 0, label: "AI 健康问答 ChatGPT", component: ChatGPT }
+];
 
 const swiperExample: any[] = [
   { id: 0, label: "ChatGPT 风格", component: ChatGPT },
@@ -96,41 +102,18 @@ const swiperExample: any[] = [
 </script>
 
 <template>
-  <el-card shadow="never">
-    <template #header>
-      <div class="card-header">
-        <span class="font-medium">
-          Ai聊天组件，采用开源的
-          <el-link
-            href="https://deepchat.dev/"
-            target="_blank"
-            style="margin: 0 4px 5px; font-size: 16px"
-          >
-            deep-chat
-          </el-link>
-        </span>
-      </div>
-      <el-link
-        class="mt-2"
-        href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/chatai"
-        target="_blank"
-      >
-        代码位置 src/views/chatai
-      </el-link>
-    </template>
-    <el-space wrap>
-      <el-card
-        v-for="item in swiperExample"
-        :key="item.id"
-        :class="['mt-4', !deviceDetection() && 'ml-16']"
-      >
-        <template #header>
-          {{ item.label }}
-        </template>
-        <component :is="item.component" />
-      </el-card>
-    </el-space>
-  </el-card>
+  <el-space wrap class="w-full">
+    <el-card v-for="item in swiper" :key="item.id" class="w-[80%]">
+      <template #header>
+        {{ item.label }}
+      </template>
+      <component
+        :is="item.component"
+        class="w-full"
+        style="width: 100%; margin-right: 10px"
+      />
+    </el-card>
+  </el-space>
 </template>
 
 <style lang="scss" scoped>

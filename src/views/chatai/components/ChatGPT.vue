@@ -20,6 +20,7 @@ onMounted(() => {
   <deep-chat
     ref="chatRef"
     style="border-radius: 10px"
+    class="w-full"
     :messageStyles="{
       default: {
         shared: {
@@ -102,9 +103,9 @@ onMounted(() => {
     }"
     :textInput="{ placeholder: { text: '发送消息' } }"
     :history="[
-      { text: '李白是谁？', role: 'user' },
+      { text: '枸杞的功效是什么？', role: 'user' },
       {
-        text: '李白（701年2月28日－762年），号青莲居士，又号“谪仙人”，是唐代著名的浪漫主义诗人，被后人誉为“诗仙”。',
+        text: '滋补肝肾：用于肝肾阴虚，改善头晕耳鸣、腰膝酸软等。 明目护眼：富含叶黄素、β-胡萝卜素，缓解视力疲劳。 增强免疫力：枸杞多糖可提升免疫细胞活性。 抗氧化抗衰老：清除自由基，延缓衰老。 护肝降血糖：有助于改善脂肪肝、调节血糖（现代研究支持）。',
         role: 'ai'
       }
     ]"

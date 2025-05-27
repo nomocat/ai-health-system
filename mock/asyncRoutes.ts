@@ -330,8 +330,8 @@ export default defineFakeRoute([
         data: [
           systemManagementRouter,
           systemMonitorRouter,
-          permissionRouter,
-          frameRouter,
+          // permissionRouter,
+          // frameRouter,
           tabsRouter
         ]
       };

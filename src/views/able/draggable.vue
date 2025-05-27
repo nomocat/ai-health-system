@@ -10,30 +10,18 @@ defineOptions({
 
 const { setSortSwap } = useAppStoreHook();
 
-const gridLists = ref<Array<Object>>([
-  { grid: "cn", num: 1 },
-  { grid: "cn", num: 2 },
-  { grid: "cn", num: 3 },
-  { grid: "cn", num: 4 },
-  { grid: "cn", num: 5 },
-  { grid: "cn", num: 6 },
-  { grid: "cn", num: 7 },
-  { grid: "cn", num: 8 },
-  { grid: "cn", num: 9 }
-]);
 
-const lists = ref<Array<Object>>([
-  { people: "cn", id: 1, name: "www.itxst.com" },
-  { people: "cn", id: 2, name: "www.baidu.com" },
-  { people: "cn", id: 3, name: "www.taobao.com" },
-  { people: "cn", id: 4, name: "www.google.com" }
-]);
 
 const cutLists = ref([
   { people: "cn", id: 1, name: "cut1" },
   { people: "cn", id: 2, name: "cut2" },
   { people: "cn", id: 3, name: "cut3" },
-  { people: "cn", id: 4, name: "cut4" }
+  { people: "cn", id: 4, name: "cut4" },
+  { people: "cn", id: 5, name: "cut5" },
+  { people: "cn", id: 6, name: "cut6" },
+  { people: "cn", id: 7, name: "cut7" },
+  { people: "cn", id: 8, name: "cut8" },
+  { people: "cn", id: 9, name: "cut9" }
 ]);
 
 const change = (evt): void => {
@@ -55,85 +43,11 @@ onMounted(() => {
 
 <template>
   <el-card shadow="never">
-    <template #header>
-      <div class="card-header">
-        <span class="font-medium">
-          拖拽组件，采用开源的
-          <el-link
-            href="https://sortablejs.github.io/vue.draggable.next/#/simple"
-            target="_blank"
-            style="margin: 0 4px 5px; font-size: 16px"
-          >
-            vuedraggable
-          </el-link>
-        </span>
-      </div>
-      <el-link
-        class="mt-2"
-        href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/able/draggable.vue"
-        target="_blank"
-      >
-        代码位置 src/views/able/draggable.vue
-      </el-link>
-    </template>
     <div class="drag-container">
       <!-- grid列表拖拽 -->
       <el-row :gutter="25">
         <el-col :xs="25" :sm="8" :md="8" :lg="8">
           <el-card shadow="never">
-            <template #header>
-              <div class="card-header">
-                <span>grid列表拖拽</span>
-              </div>
-            </template>
-            <draggable
-              v-model="gridLists"
-              class="grid-container"
-              item-key="grid"
-              animation="300"
-              chosenClass="chosen"
-              forceFallback="true"
-            >
-              <template #item="{ element }">
-                <div :class="'item' + ' ' + 'item-' + element.num">
-                  {{ element.num }}
-                </div>
-              </template>
-            </draggable>
-          </el-card>
-        </el-col>
-
-        <el-col :xs="25" :sm="8" :md="8" :lg="8">
-          <el-card shadow="never">
-            <template #header>
-              <div class="card-header">
-                <span>单列拖拽</span>
-              </div>
-            </template>
-            <!-- 单列拖拽 -->
-            <draggable
-              v-model="lists"
-              item-key="name"
-              chosen-class="chosen"
-              force-fallback="true"
-              animation="300"
-              @change="change"
-            >
-              <template #item="{ element, index }">
-                <div class="item-single">{{ element.name }} {{ index }}</div>
-              </template>
-            </draggable>
-          </el-card>
-        </el-col>
-
-        <el-col :xs="25" :sm="8" :md="8" :lg="8">
-          <el-card shadow="never">
-            <template #header>
-              <div class="card-header">
-                <span>拖拽实现元素位置交换</span>
-              </div>
-            </template>
-            <!-- 拖拽实现元素位置切换 -->
             <div class="cut-container">
               <div
                 v-for="(item, index) in cutLists"
